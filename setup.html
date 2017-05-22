@@ -1,0 +1,58 @@
+<!Doctype html>
+<html lang='en'>
+<head>
+<meta charset="utf-8"/>
+<script type="text/javascript" src="/assets/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/assets/js/schomo.js"></script>
+<link href="https://fonts.googleapis.com/css?family= Nunito:200,300,400,600,900" rel="stylesheet"> 
+<link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/font-awesome.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/jquery-ui.min.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/jquery-ui.theme.css"/>
+
+</head>
+<body>
+<div class="frame">
+<div class="app-container">
+<nav id='main'>
+<ul>
+<li><a href="/"><button id="scan"><div class="icon-scan" aria-hidden="true"></div><label>Scan</label></button></a></li>
+<li class="current-action"><a href="/setup.html"><button id="setup"><i class="fa fa-cog icon" aria-hidden="true"></i><label>Setup</label></button></a></li>
+<li><a href="/help.html"><button id="about"><i  class="fa fa-question icon" aria-hidden="true"></i><label>Help</label></button></a></li>
+</ul>
+</nav>
+<section id='statusbar' class='configure'>
+  <div class="status configure">Configuring Schomo for your network</div>
+</section>
+<section id='display'>
+<div class="form-container">
+	<h1>Setup SchoMo</h1>
+  <form action="/loading-scan.html">
+   	<h2 class="item-name">Step 1: Connect to Your Wireless Network</h2>
+    <label for='network'><i class="icon fa fa-wifi" aria-hidden="true"></i><span>Network</span></label>
+    <input type='text' class='flat' size="30" value="ATT-357-4309"/>
+    <i class="icon fa fa-chevron-down" aria-hidden="true"></i>
+		<label for='password'>Enter the network security key</label>
+		<input type="password" size="30"/>
+    <button class="delay-step" data-delay='750' data-next='step2'>Continue</button>
+    <div class="icon loader fa fa-spinner fa-spin" style="display:none"></div>
+  </form>
+  <div class="scanning-start step2" style="display:none">
+  	<p class="message">Okay, SchoMo is connected to the <strong>ATT-357-4309</strong> network.</p>
+  	<h2>Step 2: Scan your network for devices</h2>
+  	<a href="loading-scan.html"><button data-delay='1500'>Continue</button></a>
+  	<p></p>
+  </div>
+  </div>
+</div>
+
+</section>
+<section id='learning'>
+
+</section>
+
+</div>
+</div>
+</body>
+</html>

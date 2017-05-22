@@ -27,79 +27,372 @@ input[type="search"]{
 /* ## Float Clearing
 --------------------------------------------- */
 
-.author-box:before,
-.clearfix:before,
-.entry:before,
-.entry-content:before,
-.nav-primary:before,
-.nav-secondary:before,
-.pagination:before,
-.site-container:before,
-.site-footer:before,
-.site-header:before,
-.site-inner:before,
-.wrap:before {
-	content: " ";
-	display: table;
-}
-
-.author-box:after,
-.clearfix:after,
-.entry:after,
-.entry-content:after,
-.nav-primary:after,
-.nav-secondary:after,
-.pagination:after,
-.site-container:after,
-.site-footer:after,
-.site-header:after,
-.site-inner:after,
-.wrap:after {
-	clear: both;
-	content: " ";
-	display: table;
-}
+.author-box:before, .clearfix:before, .entry:before, .entry-content:before, .nav-primary:before, .nav-secondary:before, .pagination:before, .site-container:before, .site-footer:before, .site-header:before, .site-inner:before, .wrap:before { 	content: " "; 	display: table; }
+.author-box:after, .clearfix:after, .entry:after, .entry-content:after, .nav-primary:after, .nav-secondary:after, .pagination:after, .site-container:after, .site-footer:after, .site-header:after, .site-inner:after, .wrap:after { 	clear: both; 	content: " "; 	display: table; }
 
 /*
  * Colors
- 
-  Orange:  #E55322
-  Tan: #D19552
-  Olive: #B8BF73
-  Green: #B6DB83
-  Yellow: #FFF991 
+ 	 dark blue: #2d4852
+ 	 Medium blue #0088aa
+ 	 Light blue 2ad4e8
+ 	 yellow #F7CC45
+ 	 med grey #96a4a9
+ 	 light grey #cbd2d4
+ 	 green 34d27b
+ 	 orange f28c14
+ 	 red ee4958
  
  
  */
 /* 
 --------------------------------------------- */
 body{
-  font-family: 'Roboto';
-  font-size: 1rem;
+  font-family: 'Nunito';
+  font-size: 16px;
+  background-color: #676666;
 } 
+
+
+/*  The Basics
+--------------------------------------------- */
+h1 {
+	
+}
+
+h2 { 
+	font-size: 20px;
+	font-weight: 200;
+}
+
+a{
+	text-decoration:none;
+	color: #0088aa;
+}
+
+/*  The App Container
+--------------------------------------------- */
+.frame{
+	background-color: #000;
+	padding: 40px 25px;
+	width: 650px;
+	margin: 10px auto 0 150px;
+}
 
 .app-container{
   width: 100%;
   max-width: 600px;
-  margin:auto;
+  min-height:800px;
+  background-color: #cbd2d4;
 }
+
+/*  Navigation
+--------------------------------------------- */
 
 nav#main{
   width: 100%;
-  background-color: #474538;
-  padding:5px;
-  text-align:center; 
+  background-color: #2d4852;
+  height:65px;
 }
 
-nav#main ul { list-style-type: none; }
-nav#main ul li{ display: inline-table;}
+nav#main ul { 
+	list-style-type: none; 
+	display: flex; 
+	justify-content:center;
+	width: 100%;
+	height: 60px;
+	}
+	
+nav#main ul li{ 
+flex: 0 1 25%;
+}
 
-button{
-  background-color: #D19552;
-  color: #222;
+.icon-scan{
+	background-image: url('/assets/img/schomo-icon.png');
+	background-size: contain;
+  background-position: 50% 0;
+  background-repeat:no-repeat;
+  flex: 0 1 auto;
+  width: 100%;
+  height: 28px;
+  margin-bottom:2px;
+}
+
+nav button{
+  background-color: transparent;
+  background-repeat:no-repeat;
+  color: #fff;
   padding:8px; 
   border:0; 
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+  height: 60px;
+  width: 60px;
+  margin:auto;
 }
+
+nav button .icon{
+	flex: 0 1 30px;
+	font-size: 28px;
+	font-weight: 100;
+	color: #eeeeee;
+}
+
+nav button label {
+	display: block;
+	font-family: 'nunito';
+	font-size: 16px;
+	font-weight: 300;
+	letter-spacing:.5px;
+	flex: 0 1 20px;
+}
+
+
+/*  Item Cards 
+--------------------------------------------- */
+
+.item{
+	max-width: 180px;
+	background-color: #fff;
+	box-shadow: 0 0 6px 0 #999;
+	font-size: 1rem;
+	margin: 9px;
+	border-radius: 2px 0;
+	flex: 0 1 200px;
+}
+
+.item.fullwidth{
+	flex: 0 0 96%;
+	max-width: 100%;
+}
+
+.item header{
+	background-color: #34d27b;
+	padding: 5px 5px 10px 5px;
+	color: white;
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.item header .icon,
+.dialog header .icon{
+	flex: 0 0 36px;
+	overflow:hidden;
+	color: #555;
+	line-height:36px;
+	font-size: 24px;
+}
+
+.item header .icon:before{
+		background-color: #fff;
+		border-radius: 50%;
+		text-align:center;
+		width: 36px;
+		height: 36px;
+		display:block;
+}
+
+.item-header .icon.warning {
+	color: #ee4958;
+}
+
+.item header .label{
+	flex: 1 1 auto;
+	padding: 0 8px;
+}
+
+.item.warning header{
+	background-color: #ee4958;
+}
+
+.warning-text{
+	font: 'Nunito';
+	display:none;
+}
+
+
+.details.closed div{
+	display:none;
+}
+
+.item .details h3 {
+
+}
+
+.item .details h3{
+	font-weight: 100;
+	font-size: .9rem;
+	margin: 0;
+	cursor: pointer;
+	padding: 2px 5px;
+}
+
+.item .details div{
+	padding: 5px 10px;
+}
+
+.item .details p {
+	font-size: .9rem;
+	line-height: 1.1rem;
+	margin:5px 0;
+}
+.info span, .info-grid span{
+	display: inline-block;
+	font-size:1rem;
+	width:100%;
+}
+.item .item-name{
+	display: block;
+	font-weight: 600;
+}
+
+.item .item-os{
+	display: block;
+	font-size: .8rem;
+	font-style:italic;
+}
+
+.item .toggle:before{
+	font-family: 'FontAwesome';
+	content: '\f0da';
+	margin-right: 5px;
+	color: #2d4852;
+}
+
+.item .toggle.open:before{
+	content: '\f0d7';
+}
+
+.item .toggle.open{
+	background-color: #ddeeee;
+}
+
+.item .notes .edit{
+	color: #fff;
+	cursor: pointer;
+}
+
+.item .notes:hover .edit{
+	color: #999;
+}
+
+.info-grid{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.info-grid p{
+	flex: 0 1 45%;
+	margin: 5px 0;
+}
+
+/*  Form Container
+--------------------------------------------- */
+
+.form-container {
+	background-color: #fff;
+	color: #333;
+	width: 98%;
+	padding: 40px 50px;
+	height: 600px;
+	margin:auto;
+}
+
+.form-container header{
+}
+
+.form-container form {
+	margin-bottom: 20px;
+}
+
+.form-container label{
+	width: 100%;
+	display:block;
+	font-size: .9rem;
+	margin-top: 20px;
+	
+}
+
+input[type=submit], 
+.form-container button{
+	border:none;
+	height: 30px;
+	border-radius: 2px;
+	background-color: #0088aa;
+	color:white;
+}
+
+input[type=submit]:hover,
+.form-container button:hover{
+	background-color: #2ad4e8;
+}
+
+input[type=submit]:active,
+.form-container button:active{
+	background-color: #2d4852;
+	color: #F7CC45;
+}
+
+
+.form-container label .icon{
+	margin-right: 10px;
+}
+
+.form-container .details{
+	border-top: 1px solid #cbd2d4;
+}
+
+/*  Dialog Boxes
+--------------------------------------------- */
+
+.dialog {
+	max-width: 500px;
+	background-color: #fff;
+	box-shadow: 4px 4px 4px 3px #666;
+	font-size: 1rem;
+	margin: 10px;
+	border-radius: 2px 0;
+}
+
+.dialog header {
+	background-color: #0088aa;
+	padding: 5px 5px 10px 5px;
+	color: white;
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.dialog .content {
+	background-color: white;
+}
+
+/*  Main display Area
+--------------------------------------------- */
+
+#display {
+	background-color: #cbd2d4;
+	color: #000;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.appear-in .item {
+	display:none;
+}
+
+/*  status bar
+--------------------------------------------- */
+
+#statusbar{
+	background-color: #0088aa;
+	padding: 4px 12px;
+	color: #fff;
+}
+
+#statusbar.configure{
+	background-color: #f28c14;
+}
+
 
 
 

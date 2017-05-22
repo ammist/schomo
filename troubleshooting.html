@@ -1,0 +1,65 @@
+<!Doctype html>
+<html lang='en'>
+<head>
+<meta charset="utf-8"/>
+<script type="text/javascript" src="/assets/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/assets/js/schomo.js"></script>
+<link href="https://fonts.googleapis.com/css?family= Nunito:200,300,400,600,900" rel="stylesheet"> 
+<link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/font-awesome.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/jquery-ui.min.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/jquery-ui.theme.css"/>
+
+</head>
+<body>
+<div class="frame">
+<div class="app-container">
+<nav id='main'>
+<ul>
+<li><a href="/"><button id="scan"><div class="icon-scan" aria-hidden="true"></div><label>Scan</label></button></a></li>
+<li class="current-action"><a href="/setup.html"><button id="setup"><i class="fa fa-cog icon" aria-hidden="true"></i><label>Setup</label></button></a></li>
+<li><a href="/help.html"><button id="about"><i  class="fa fa-question icon" aria-hidden="true"></i><label>Help</label></button></a></li>
+</ul>
+</nav>
+<section id='statusbar' class='configure'>
+  <div class="status configure">Troubleshooting the BabyCam</div>
+</section>
+<section id='display'>
+<div class="form-container">
+	<h1>Make this Device Secure</h1>
+	<div class="info-grid"">
+	<p>Device: <span>BabyCam</span></p>
+	<p>IP Address: <span>192.168.1.101</span></p>
+	<p>Manufacturer: <span>Livon LLC</span></p>
+	<p>Operating System: <span>Ubuntu Linux 10.5 (current version is 11.6)</span></p>
+	</div>
+	<p>12 reports that this device has been hacked.</p>
+	<h2>Remedy</h2>
+  <div class="step1">
+   	<h2 class="item-name">Step 1: Find the Physical Device</h2>
+   	<p>Turn off the device and click "Refresh" to make sure you've correctly identified it.</p>
+    <button class="delay-step" data-delay='1500' data-next='step2'>Refresh</button>
+    <div class="icon loader fa fa-spinner fa-spin" style="display:none"></div>
+  </div>
+  <div class="scanning-start step2" style="display:none">
+  	<p class="message">Great. The <strong>BabyCam</strong> is no longer active.</p>
+  	<h2>Step 2: Check SchoMo Cloud for detailed info</h2>
+  	<p>Please collect all relevant manufacturer information about your device.</p>
+  	<a href="loading-scan.html"><button data-delay='1500'>To the cloud!</button></a>
+  	<br/>
+  	<p><a href="">Save this for later</a>.</p>
+  	<p></p>
+  </div>
+  </div>
+</div>
+
+</section>
+<section id='learning'>
+
+</section>
+
+</div>
+</div>
+</body>
+</html>
